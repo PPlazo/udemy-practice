@@ -33,7 +33,9 @@ function App() {
 
     const addExpenseHandler = expense => {
         console.log('In App.js');
-        setExpenses(expensesList.concat([expense]));
+        setExpenses((prevExpenses) => {
+            return [expense, ...prevExpenses];
+        });
     };
 
     return (
